@@ -15,13 +15,10 @@ return new class extends Migration
     {
         Schema::create('attendences', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('department_id');
             $table->foreignId('employ_id');
             $table->string('location');
-            $table->string('attendence_by');
-            $table->string('year');
-            $table->string('month');
             $table->string('clock_in_time');
+            $table->string('clock_in_ip');
             $table->string('clock_out_time');
             $table->boolean('late');
             $table->boolean('half_day');
