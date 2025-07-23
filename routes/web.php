@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,5 +24,13 @@ Route::get('/', function () {
 Route::group( ['prefix' => 'admin'], function(){
 
     Route::get('dashboard', [AdminController::class, 'index']);
+
+});
+
+// Route group for guest who are not yet logged in
+
+Route::group(['middleware' => 'guest'], function(){
+
+    Route::get('login', [AuthController::class, 'login']);
 
 });
