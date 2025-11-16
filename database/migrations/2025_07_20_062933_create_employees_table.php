@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id');
             $table->string('name');
+            $table->string('profile_picture');
             $table->foreignId('designation_id')->nullable();
             $table->foreignId('department_id');
             $table->foreignId('country_id')->nullable();
@@ -24,7 +25,7 @@ return new class extends Migration
             $table->string('gender')->nullable();
             $table->date('joining_date');
             $table->date('birth_date')->nullable();
-            $table->foreignId('reporting_to')->nullable();
+            $table->integer('reporting_to')->nullable();
             $table->foreignId('language_id')->nullable();
             $table->string('address')->nullable();
             $table->string('about')->nullable();
