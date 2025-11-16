@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Department;
 use App\Models\Designation;
 use App\Models\User;
 use Illuminate\Support\Str;
@@ -20,13 +21,14 @@ class EmployeeFactory extends Factory
     public function definition()
     {
         $users = User::all()->pluck('id')->toArray();
-
         $deginations = Designation::all()->pluck('id')->toArray();
+        $departments = Department::all()->pluck('id')->toArray();
+
 
         return [
             'user_id' => fake()->unique()->randomElement($users),
             'designation_id' => fake()->randomElement($deginations),
-            'department_id' => fake()->numberBetween(1,20),
+            'department_id' => fake()->randomElement($departments),
             'country_id' => fake()->numberBetween(1,20),
             'mobile' =>fake()->phoneNumber(),
             'gender' => 'Male',
