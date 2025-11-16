@@ -42,7 +42,7 @@ class EmployeeFactory extends Factory
             'notification_permission' => fake()->boolean(),
             'hourly_rate' => fake()->randomFloat(),
             'slack_username' => fake()->userName(),
-            'skills' => fake()->paragraph(),
+            'skills' => fake()->paragraph(3),
 
         ];
     }
