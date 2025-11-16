@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use Faker\Guesser\Name;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -16,9 +17,14 @@ class CountryFactory extends Factory
      */
     public function definition()
     {
-         $countries = ['Bangladesh','India','Pakistan', 'United Kindom','United States Of America'];
+         $countries = file_get_contents( public_path() . '/countries/countries.json');
+         $countries_array = json_decode($countries, true);
+         $countries_names = array_column($countries_array, 'name');
+         $countries_codes = array_column($countries_array, 'code');
+
          return [
-            'country_name' =>fake()->unique()->randomElement($countries),
+            'country_name' =>fake()->unique()->randomElement($countries_names),
+            'country_code' =>fake()->unique()->randomElement($countries_codes),
             'flag_image' => null,
         ];
     }
