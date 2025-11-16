@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\User;
 use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -17,9 +18,9 @@ class EmployeeFactory extends Factory
      */
     public function definition()
     {
+        $users = User::all()->pluck('id')->toArray();
         return [
-            'user_id' => fake()->numberBetween(1,20),
-            'name' => fake()->firstNameMale(),
+            'user_id' => fake()->unique()->randomElement($users),
             'profile_picture' => fake()->imageUrl(),
             'designation_id' => fake()->numberBetween(1,20),
             'department_id' => fake()->numberBetween(1,20),
