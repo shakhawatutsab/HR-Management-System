@@ -7,6 +7,7 @@ namespace Database\Seeders;
 use App\Models\Country;
 use App\Models\Employee;
 use App\Models\Designation;
+use App\Models\Language;
 use Illuminate\Database\Seeder;
 use Database\Seeders\UserSeeder;
 use Database\Seeders\CountrySeeder;
@@ -37,6 +38,8 @@ class DatabaseSeeder extends Seeder
         $this->call( DepartmentSeeder::class);
         $this->call( CountrySeeder::class);
         $this->call( EmployeeSeeder::class);
+        $this->call( LanguageSeeder::class);
+
 
     }
 }
