@@ -1,7 +1,9 @@
 <?php
 
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\EmployeeController;
 
@@ -25,6 +27,9 @@ Route::get('/', function () {
 Route::group( ['prefix' => 'admin'], function(){
 
     Route::get('dashboard', [AdminController::class, 'index']);
+
+    Route::get('users', [UserController::class, 'index']);
+
 
     Route::get('employees', [EmployeeController::class, 'index']);
 
