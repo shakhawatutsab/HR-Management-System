@@ -26,12 +26,12 @@ Route::get('/', function () {
 
 Route::group( ['prefix' => 'admin'], function(){
 
-    Route::get('dashboard', [AdminController::class, 'index']);
+    Route::get('dashboard', [AdminController::class, 'index'])->name('admin.dashboard');
 
-    Route::get('users', [UserController::class, 'index']);
+    Route::get('users', [UserController::class, 'index'])->name('admin.users');
 
 
-    Route::get('employees', [EmployeeController::class, 'index']);
+    Route::get('employees', [EmployeeController::class, 'index'])->name('admin.employees');
 
 });
 
@@ -41,4 +41,4 @@ Route::group(['middleware' => 'guest'], function(){
 
     Route::get('login', [AuthController::class, 'login']);
 
-});
+ });

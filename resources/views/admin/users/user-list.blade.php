@@ -6,17 +6,19 @@
     <main class="main-content t-mt-15 t-mb-15">
         <div class="container-fluid px-3">
             <div class="row g-3">
+                @foreach ($users as $user)
+                {{-- Singel User Information --}}
                 <div class="col-md-6 col-lg-4 col-xxl-3">
                     <div class="id-card t-shadow t-bg-white text-center">
-                        <span class="id-card__number id-card__number--warning">01</span>
+                        <span class="id-card__number id-card__number--warning">{{ $user->id }}</span>
                         <div class="avatars avatars--circle avatars--xl mx-auto">
-                            <img src="assets/img/avatar.png" alt="max" class="img-fulid w-100">
+                            <img src="{{ $user->profile_picture }}" alt="max" class="img-fulid w-100">
                             <div class="avatars__status">
                                 <i class="las la-check"></i>
                             </div>
                         </div>
                         <div class="id-card__body t-mt-30">
-                            <h5 class="id-card__title text-capitalize mt-0 mb-0">peter parker</h5>
+                            <h5 class="id-card__title text-capitalize mt-0 mb-0">{{ $user->name }}</h5>
                             <span class="id-card__sub-title text-capitalize xsm-text">product manager</span>
                             <p class="sm-text t-mt-15">
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit adipisicing
@@ -26,7 +28,7 @@
                                     <span class="id-card__icon t-mr-8">
                                         <i class="fa fa-envelope-o"></i>
                                     </span>
-                                    <span class="d-inlin-block sm-text">abc@xyz.com</span>
+                                    <span class="d-inlin-block sm-text">{{ $user->email }}</span>
                                 </li>
                                 <li class="t-mb-5">
                                     <span class="id-card__icon t-mr-8">
@@ -39,11 +41,13 @@
                         </div>
                     </div>
                 </div>
+                @endforeach
+                {{-- Singel User Information --}}
                 <div class="col-md-6 col-lg-4 col-xxl-3">
                     <div class="id-card t-shadow t-bg-white text-center">
                         <span class="id-card__number id-card__number--success">02</span>
                         <div class="avatars avatars--circle avatars--xl mx-auto">
-                            <img src="assets/img/overlay-16.jpg" alt="max" class="img-fulid w-100">
+                            <img src="{{ $user->profile_picture }}" alt="max" class="img-fulid w-100">
                             <div class="avatars__status">
                                 <i class="las la-check"></i>
                             </div>
@@ -69,212 +73,6 @@
                                 </li>
                             </ul>
                             <button type="button" class="btn btn-transparent btn-success sm-text font-weight-bold w-100 text-capitalize t-mt-15">write message</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 col-xxl-3">
-                    <div class="id-card t-shadow t-bg-white text-center">
-                        <span class="id-card__number id-card__number--primary">03</span>
-                        <div class="avatars avatars--circle avatars--xl mx-auto">
-                            <span class="avatars__add-member">
-                                <span class="xlg-text text-light text-uppercase font-weight-bold">
-                                    pk
-                                </span>
-                            </span>
-                            <div class="avatars__status">
-                                <i class="las la-check"></i>
-                            </div>
-                        </div>
-                        <div class="id-card__body t-mt-30">
-                            <h5 class="id-card__title text-capitalize mt-0 mb-0">peter parker</h5>
-                            <span class="id-card__sub-title text-capitalize xsm-text">product manager</span>
-                            <p class="sm-text t-mt-15">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit adipisicing
-                            </p>
-                            <ul class="t-list">
-                                <li class="t-mb-5">
-                                    <span class="id-card__icon t-mr-8">
-                                        <i class="fa fa-envelope-o"></i>
-                                    </span>
-                                    <span class="d-inlin-block sm-text">abc@xyz.com</span>
-                                </li>
-                                <li class="t-mb-5">
-                                    <span class="id-card__icon t-mr-8">
-                                        <i class="fa fa-map-marker"></i>
-                                    </span>
-                                    <span class="d-inlin-block sm-text text-capitalize">south road, miami</span>
-                                </li>
-                            </ul>
-                            <button type="button" class="btn btn-transparent btn-primary sm-text font-weight-bold w-100 text-capitalize t-mt-15">write message</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 col-xxl-3">
-                    <div class="id-card t-shadow t-bg-white text-center">
-                        <span class="id-card__number id-card__number--primary">04</span>
-                        <div class="avatars avatars--circle avatars--xl mx-auto">
-                            <img src="assets/img/user.jpg" alt="max" class="img-fulid w-100">
-                            <div class="avatars__status">
-                                <i class="las la-check"></i>
-                            </div>
-                        </div>
-                        <div class="id-card__body t-mt-30">
-                            <h5 class="id-card__title text-capitalize mt-0 mb-0">peter parker</h5>
-                            <span class="id-card__sub-title text-capitalize xsm-text">product manager</span>
-                            <p class="sm-text t-mt-15">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit adipisicing
-                            </p>
-                            <ul class="t-list">
-                                <li class="t-mb-5">
-                                    <span class="id-card__icon t-mr-8">
-                                        <i class="fa fa-envelope-o"></i>
-                                    </span>
-                                    <span class="d-inlin-block sm-text">abc@xyz.com</span>
-                                </li>
-                                <li class="t-mb-5">
-                                    <span class="id-card__icon t-mr-8">
-                                        <i class="fa fa-map-marker"></i>
-                                    </span>
-                                    <span class="d-inlin-block sm-text text-capitalize">south road, miami</span>
-                                </li>
-                            </ul>
-                            <button type="button" class="btn btn-transparent btn-primary sm-text font-weight-bold w-100 text-capitalize t-mt-15">write message</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 col-xxl-3">
-                    <div class="id-card t-shadow t-bg-white text-center">
-                        <span class="id-card__number id-card__number--warning">05</span>
-                        <div class="avatars avatars--circle avatars--xl mx-auto">
-                            <img src="assets/img/overlay-3.jpg" alt="max" class="img-fulid w-100">
-                            <div class="avatars__status">
-                                <i class="las la-check"></i>
-                            </div>
-                        </div>
-                        <div class="id-card__body t-mt-30">
-                            <h5 class="id-card__title text-capitalize mt-0 mb-0">peter parker</h5>
-                            <span class="id-card__sub-title text-capitalize xsm-text">product manager</span>
-                            <p class="sm-text t-mt-15">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit adipisicing
-                            </p>
-                            <ul class="t-list">
-                                <li class="t-mb-5">
-                                    <span class="id-card__icon t-mr-8">
-                                        <i class="fa fa-envelope-o"></i>
-                                    </span>
-                                    <span class="d-inlin-block sm-text">abc@xyz.com</span>
-                                </li>
-                                <li class="t-mb-5">
-                                    <span class="id-card__icon t-mr-8">
-                                        <i class="fa fa-map-marker"></i>
-                                    </span>
-                                    <span class="d-inlin-block sm-text text-capitalize">south road, miami</span>
-                                </li>
-                            </ul>
-                            <button type="button" class="btn btn-transparent btn-warning sm-text font-weight-bold w-100 text-capitalize t-mt-15">write message</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 col-xxl-3">
-                    <div class="id-card t-shadow t-bg-white text-center">
-                        <span class="id-card__number id-card__number--success">06</span>
-                        <div class="avatars avatars--circle avatars--xl mx-auto">
-                            <img src="assets/img/user-1.jpg" alt="max" class="img-fulid w-100">
-                            <div class="avatars__status">
-                                <i class="las la-check"></i>
-                            </div>
-                        </div>
-                        <div class="id-card__body t-mt-30">
-                            <h5 class="id-card__title text-capitalize mt-0 mb-0">peter parker</h5>
-                            <span class="id-card__sub-title text-capitalize xsm-text">product manager</span>
-                            <p class="sm-text t-mt-15">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit adipisicing
-                            </p>
-                            <ul class="t-list">
-                                <li class="t-mb-5">
-                                    <span class="id-card__icon t-mr-8">
-                                        <i class="fa fa-envelope-o"></i>
-                                    </span>
-                                    <span class="d-inlin-block sm-text">abc@xyz.com</span>
-                                </li>
-                                <li class="t-mb-5">
-                                    <span class="id-card__icon t-mr-8">
-                                        <i class="fa fa-map-marker"></i>
-                                    </span>
-                                    <span class="d-inlin-block sm-text text-capitalize">south road, miami</span>
-                                </li>
-                            </ul>
-                            <button type="button" class="btn btn-transparent btn-success sm-text font-weight-bold w-100 text-capitalize t-mt-15">write message</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 col-xxl-3">
-                    <div class="id-card t-shadow t-bg-white text-center">
-                        <span class="id-card__number id-card__number--primary">07</span>
-                        <div class="avatars avatars--circle avatars--xl mx-auto">
-                            <span class="avatars__add-member">
-                                <span class="xlg-text text-light text-uppercase font-weight-bold">
-                                    jd
-                                </span>
-                            </span>
-                            <div class="avatars__status">
-                                <i class="las la-check"></i>
-                            </div>
-                        </div>
-                        <div class="id-card__body t-mt-30">
-                            <h5 class="id-card__title text-capitalize mt-0 mb-0">john doe</h5>
-                            <span class="id-card__sub-title text-capitalize xsm-text">product manager</span>
-                            <p class="sm-text t-mt-15">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit adipisicing
-                            </p>
-                            <ul class="t-list">
-                                <li class="t-mb-5">
-                                    <span class="id-card__icon t-mr-8">
-                                        <i class="fa fa-envelope-o"></i>
-                                    </span>
-                                    <span class="d-inlin-block sm-text">abc@xyz.com</span>
-                                </li>
-                                <li class="t-mb-5">
-                                    <span class="id-card__icon t-mr-8">
-                                        <i class="fa fa-map-marker"></i>
-                                    </span>
-                                    <span class="d-inlin-block sm-text text-capitalize">south road, miami</span>
-                                </li>
-                            </ul>
-                            <button type="button" class="btn btn-transparent btn-primary sm-text font-weight-bold w-100 text-capitalize t-mt-15">write message</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 col-xxl-3">
-                    <div class="id-card t-shadow t-bg-white text-center">
-                        <span class="id-card__number id-card__number--warning">08</span>
-                        <div class="avatars avatars--circle avatars--xl mx-auto">
-                            <img src="assets/img/overlay-15.jpg" alt="max" class="img-fulid w-100">
-                            <div class="avatars__status">
-                                <i class="las la-check"></i>
-                            </div>
-                        </div>
-                        <div class="id-card__body t-mt-30">
-                            <h5 class="id-card__title text-capitalize mt-0 mb-0">peter parker</h5>
-                            <span class="id-card__sub-title text-capitalize xsm-text">product manager</span>
-                            <p class="sm-text t-mt-15">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit adipisicing
-                            </p>
-                            <ul class="t-list">
-                                <li class="t-mb-5">
-                                    <span class="id-card__icon t-mr-8">
-                                        <i class="fa fa-envelope-o"></i>
-                                    </span>
-                                    <span class="d-inlin-block sm-text">abc@xyz.com</span>
-                                </li>
-                                <li class="t-mb-5">
-                                    <span class="id-card__icon t-mr-8">
-                                        <i class="fa fa-map-marker"></i>
-                                    </span>
-                                    <span class="d-inlin-block sm-text text-capitalize">south road, miami</span>
-                                </li>
-                            </ul>
-                            <button type="button" class="btn btn-transparent btn-warning sm-text font-weight-bold w-100 text-capitalize t-mt-15">write message</button>
                         </div>
                     </div>
                 </div>

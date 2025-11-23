@@ -15,7 +15,7 @@
                         <nav class="mx-sidenav__menu">
                             <ul class="t-list mx-sidenav__menu-is">
                                 <li class="mx-sidenav__menu-item active-page">
-                                    <a href="index.html" class="mx-sidenav__menu-link">
+                                    <a href="{{ route('admin.dashboard') }}" class="mx-sidenav__menu-link">
                                         <span class="mx-sidenav__menu-icon t-mr-15">
                                             <span class='bx bx-category'></span>
                                         </span>
@@ -46,7 +46,7 @@
                                             </a>
                                         </li>
                                         <li class="mx-sidenav__sub-item">
-                                            <a href="user-list.html" class="mx-sidenav__sub-link ">
+                                            <a href="{{ route('admin.users') }}" class="mx-sidenav__sub-link ">
                                                 <span class="mx-sidenav__sub-icon t-mr-15">
                                                     <i class='bx bxs-user-detail'></i>
                                                 </span>
