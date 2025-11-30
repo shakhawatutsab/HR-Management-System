@@ -10,7 +10,7 @@
                 {{-- Singel User Information --}}
                 <div class="col-md-6 col-lg-4 col-xxl-3">
                     <div class="id-card t-shadow t-bg-white text-center">
-                        <span class="id-card__number id-card__number--warning">{{ $user->id }}</span>
+                        <span class="id-card__number id-card__number--{{ ($user->id %3 == 1) ? 'primary' : (($user->id %3 == 2) ? 'success':'warning')}}">{{ $user->id }}</span>
                         <div class="avatars avatars--circle avatars--xl mx-auto">
                             <img src="{{ $user->profile_picture }}" alt="max" class="img-fulid w-100">
                             <div class="avatars__status">
@@ -19,7 +19,7 @@
                         </div>
                         <div class="id-card__body t-mt-30">
                             <h5 class="id-card__title text-capitalize mt-0 mb-0">{{ $user->name }}</h5>
-                            <span class="id-card__sub-title text-capitalize xsm-text">product manager</span>
+                            <span class="id-card__sub-title text-capitalize xsm-text">{{ isset( $user->employee) ? $user->employee->designation->designation_name : '' }}</span>
                             <p class="sm-text t-mt-15">
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit adipisicing
                             </p>
@@ -37,45 +37,13 @@
                                     <span class="d-inlin-block sm-text text-capitalize">south road, miami</span>
                                 </li>
                             </ul>
-                            <button type="button" class="btn btn-transparent btn-warning sm-text font-weight-bold w-100 text-capitalize t-mt-15">write message</button>
+                            <button type="button" class="btn btn-transparent btn-{{ ($user->id %3 == 1) ? 'primary' : (($user->id %3 == 2) ? 'success':'warning')}} sm-text font-weight-bold w-100 text-capitalize t-mt-15">write message</button>
                         </div>
                     </div>
                 </div>
                 @endforeach
-                {{-- Singel User Information --}}
-                <div class="col-md-6 col-lg-4 col-xxl-3">
-                    <div class="id-card t-shadow t-bg-white text-center">
-                        <span class="id-card__number id-card__number--success">02</span>
-                        <div class="avatars avatars--circle avatars--xl mx-auto">
-                            <img src="{{ $user->profile_picture }}" alt="max" class="img-fulid w-100">
-                            <div class="avatars__status">
-                                <i class="las la-check"></i>
-                            </div>
-                        </div>
-                        <div class="id-card__body t-mt-30">
-                            <h5 class="id-card__title text-capitalize mt-0 mb-0">peter parker</h5>
-                            <span class="id-card__sub-title text-capitalize xsm-text">product manager</span>
-                            <p class="sm-text t-mt-15">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit adipisicing
-                            </p>
-                            <ul class="t-list">
-                                <li class="t-mb-5">
-                                    <span class="id-card__icon t-mr-8">
-                                        <i class="fa fa-envelope-o"></i>
-                                    </span>
-                                    <span class="d-inlin-block sm-text">abc@xyz.com</span>
-                                </li>
-                                <li class="t-mb-5">
-                                    <span class="id-card__icon t-mr-8">
-                                        <i class="fa fa-map-marker"></i>
-                                    </span>
-                                    <span class="d-inlin-block sm-text text-capitalize">south road, miami</span>
-                                </li>
-                            </ul>
-                            <button type="button" class="btn btn-transparent btn-success sm-text font-weight-bold w-100 text-capitalize t-mt-15">write message</button>
-                        </div>
-                    </div>
-                </div>
+
+
             </div>
             <div class="t-bg-white cards t-shadow mt-3 mb-3 py-2">
                 <div class="container-fluid px-3">

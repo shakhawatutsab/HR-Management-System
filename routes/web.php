@@ -42,3 +42,6 @@ Route::group(['middleware' => 'guest'], function(){
     Route::get('login', [AuthController::class, 'login']);
 
  });
+ Route::get('users', function(){
+    $user = User::find(1);
+ });

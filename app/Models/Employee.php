@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Designation;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Employee extends Model
 {
@@ -34,4 +35,8 @@ class Employee extends Model
             'skills',
 
     ];
+
+    public function designation(){
+        return $this->belongsto(Designation::class);
+    }
 }
